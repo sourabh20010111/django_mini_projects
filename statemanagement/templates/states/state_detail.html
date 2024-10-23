@@ -1,0 +1,6 @@
+<h1>{{ state.name }}</h1>
+<p>Population: {{ state.population }}</p>
+<p>Language: {{ state.language }}</p>
+<p>Capital: {{ state.capital }}</p>
+<a href="{% url 'state-update' state.pk %}">Edit</a>
+<a href="{% url 'state-list' %}">Back to list</a>
