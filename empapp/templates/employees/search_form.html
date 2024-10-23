@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Search</title>
+</head>
+<body>
+    <h1>Employee Search</h1>
+    <form method="post" action="{% url 'search_employees' %}">
+        {% csrf_token %}
+        <label for="lookup_type">Search By:</label>
+        <select name="lookup_type" id="lookup_type">
+            <option value="startswith">Starts With</option>
+            <option value="contains">Contains</option>
+            <option value="lte">Age Less Than or Equal To</option>
+        </select><br><br>
+        
+        <label for="search_string">Search String:</label>
+        <input type="text" name="search_string" id="search_string"><br><br>
+
+        <label for="age_number">Age Number (only for Age search):</label>
+        <input type="number" name="age_number" id="age_number" min="0" step="1"><br><br>
+
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

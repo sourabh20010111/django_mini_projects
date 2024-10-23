@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Search Results</title>
+</head>
+<body>
+    <h1>Employee Search Results</h1>
+    <ul>
+        {% for employee in results %}
+            <li>{{ employee.fname }} {{ employee.lname }} - Age: {{ employee.age }} - Address: {{ employee.address }}</li>
+        {% empty %}
+            <li>No employees found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'search_form' %}">Back to Search</a>
+</body>
+</html>
